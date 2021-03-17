@@ -14,7 +14,7 @@ const styles = {
 		}
 	},
 	colors    : {
-		backgroundColor : '#dae1e3',
+		backgroundColor : '#dae1e4',
 		height          : '150px',
 		width           : '100%',
 		borderRadius    : '5px',
@@ -32,7 +32,7 @@ const styles = {
 	},
 	emoji     : {
 		marginLeft : '0.5rem',
-		fontSize   : '1rem'
+		fontSize   : '1.2rem'
 	},
 	miniColor : {
 		height       : '25%',
