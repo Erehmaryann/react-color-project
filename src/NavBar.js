@@ -44,7 +44,7 @@ export class NavBar extends Component {
 					<div className="slider-conainer">
 						<span>Level: {level}</span>
 						<div className="slider">
-							<Slider defaultValue={level} min={100} max={1000} step={100} onAfterChange={changeLevel} />
+							<Slider defaultValue={level} min={100} max={900} step={100} onAfterChange={changeLevel} />
 						</div>
 					</div>
 				)}
