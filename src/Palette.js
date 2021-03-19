@@ -33,6 +33,7 @@ export class Palette extends Component {
 					key={color.id}
 					// paletteId={id}
 					// id={color.id}
+					showLink={true}
 					moreUrl={`/palette/${id}/${color.id}`}
 				/>
 			);
