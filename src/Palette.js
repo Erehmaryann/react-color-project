@@ -33,7 +33,7 @@ export class Palette extends Component {
 					background={color[format]}
 					name={color.name}
 					key={color.id}
-					showLink={true}
+					showingFullPalette={true}
 					moreUrl={`/palette/${id}/${color.id}`}
 				/>
 			);
