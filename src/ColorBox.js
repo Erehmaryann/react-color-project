@@ -17,7 +17,7 @@ const styles = {
 		position         : 'relative',
 		cursor           : 'pointer',
 		'&:hover button' : {
-			opacity    : 1,
+			opacity    : '1',
 			transition : '0.5s'
 		}
 	},
@@ -70,7 +70,7 @@ const styles = {
 		textTransform  : 'uppercase',
 		border         : 'none',
 		textDecoration : 'none',
-		opacity        : 0
+		opacity        : '0'
 	},
 	boxContent  : {
 		padding       : '10px',
@@ -143,6 +143,7 @@ export class ColorBox extends Component {
 		};
 		this.changeCopyState = this.changeCopyState.bind(this);
 	}
+	S;
 
 	changeCopyState() {
 		this.setState({ copied: true }, () => {
