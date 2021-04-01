@@ -12,7 +12,6 @@ export class ColorBox extends Component {
 		};
 		this.changeCopyState = this.changeCopyState.bind(this);
 	}
-	S;
 
 	changeCopyState() {
 		this.setState({ copied: true }, () => {

@@ -34,7 +34,6 @@ export class NavBar extends Component {
 	}
 	render() {
 		const { level, changeLevel, showingAllShades, classes } = this.props;
-		console.log({ showingAllShades });
 		const { format, open } = this.state;
 		return (
 			<header className={classes.Navbar}>
