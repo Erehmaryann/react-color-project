@@ -34,19 +34,25 @@ export class NavBar extends Component {
 	}
 	render() {
 		const { level, changeLevel, showingAllShades, classes } = this.props;
+		console.log({ showingAllShades });
 		const { format, open } = this.state;
 		return (
 			<header className={classes.Navbar}>
 				<div className={classes.logo}>
-					<Link to="/" key>
-						reactcolorpicker
-					</Link>
+					<Link to="/">reactcolorpicker</Link>
 				</div>
 				{showingAllShades && (
 					<div>
 						<span>Level: {level}</span>
 						<div className={classes.slider}>
-							<Slider defaultValue={level} min={100} max={900} step={100} onAfterChange={changeLevel} />
+							<Slider
+								defaultValue={level}
+								min={100}
+								max={900}
+								step={100}
+								// onAfterChange={(level) => changeLevel(level)}
+								onAfterChange={changeLevel}
+							/>
 						</div>
 					</div>
 				)}
