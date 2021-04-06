@@ -96,14 +96,22 @@ export class NewPaletteForm extends Component {
 	componentDidMount() {
 		ValidatorForm.addValidationRule('isColorNameUnique', (value) => {
 			// extract name from each color
-			this.state.colors.every(({ name }) => name.toLowerCase() !== value.toLowerCase());
+			return this.state.colors.every(({ name }) => name.toLowerCase() !== value.toLowerCase());
 		});
 		ValidatorForm.addValidationRule('isColorUnique', (value) => {
-			this.state.colors.every(({ color }) => color !== this.state.currentColor);
+			return this.state.colors.every(({ color }) => color !== this.state.currentColor);
 		});
+		// // my code
+		// 	ValidatorForm.addValidationRule('isColorNameUnique', (value) =>
+		// 	this.state.colors.every(({ name }) => name.toLowerCase() !== value.toLowerCase())
+		// );
+		// ValidatorForm.addValidationRule('isColorUnique', (value) =>
+		// 	this.state.colors.every(({ color }) => color !== this.state.currentColor)
+		// );
+		// //
 		ValidatorForm.addValidationRule('isPaletteNameUnique', (value) => {
 			// extract name from each color
-			this.props.palettes.every(({ paletteName }) => paletteName.toLowerCase() !== value.toLowerCase());
+			return this.props.palettes.every(({ paletteName }) => paletteName.toLowerCase() !== value.toLowerCase());
 		});
 	}
 
@@ -222,17 +230,13 @@ export class NewPaletteForm extends Component {
 						</Button>
 					</div>
 					<ChromePicker color={this.state.currentColor} onChangeComplete={this.updateCurrentColor} />
-					<ValidatorForm onSubmit={this.createNewColor}>
+					<ValidatorForm onSubmit={this.createNewColor} ref="form" instantValidate={false}>
 						<TextValidator
 							value={this.state.newColorName}
 							onChange={this.handleChange}
 							name="newColorName"
 							validators={[ 'required', 'isColorNameUnique', 'isColorUnique' ]}
-							errorMessages={[
-								'this field is required',
-								'Color name must be unique',
-								'Color already used'
-							]}
+							errorMessages={[ 'Enter a color name', 'color name must be unique', 'color already used' ]}
 						/>
 						<Button
 							variant="contained"
