@@ -12,19 +12,20 @@ import Button from '@material-ui/core/Button';
 import { arrayMove } from 'react-sortable-hoc';
 import DraggableColorList from './DraggableColorList';
 
-const drawerWidth = 400;
+const drawerWidth = 350;
 
 const styles = (theme) => ({
 	root         : {
 		display : 'flex'
 	},
-
 	drawer       : {
 		width      : drawerWidth,
 		flexShrink : 0
 	},
 	drawerPaper  : {
-		width : drawerWidth
+		width      : drawerWidth,
+		display    : 'flex',
+		alignItems : 'center'
 	},
 	drawerHeader : {
 		display        : 'flex',
@@ -50,6 +51,20 @@ const styles = (theme) => ({
 			duration : theme.transitions.duration.enteringScreen
 		}),
 		marginLeft : 0
+	},
+	container    : {
+		width          : '90%',
+		height         : '100%',
+		display        : 'flex',
+		flexDirection  : 'column',
+		justifyContent : 'center',
+		alignItems     : 'center'
+	},
+	buttons      : {
+		width : '100%'
+	},
+	button       : {
+		width : '50%'
 	}
 });
 
@@ -154,27 +169,37 @@ export class NewPaletteForm extends Component {
 						</IconButton>
 					</div>
 					<Divider />
-					<Typography variant="h4">Design Your Palette</Typography>
-					<div>
-						<Button variant="contained" color="secondary" onClick={this.clearColors}>
-							Clear Palette
-						</Button>
-						<Button
-							variant="contained"
-							color="primary"
-							disabled={paletteIsFull}
-							onClick={this.addRandomColor}
-						>
-							{
-								paletteIsFull ? 'Palette Is Full!' :
-								'Random Color'}
-						</Button>
+					<div className={classes.container}>
+						<Typography variant="h4" gutterBottom>
+							Design Your Palette
+						</Typography>
+						<div className={classes.buttons}>
+							<Button
+								className={classes.button}
+								variant="contained"
+								color="secondary"
+								onClick={this.clearColors}
+							>
+								Clear Palette
+							</Button>
+							<Button
+								className={classes.button}
+								variant="contained"
+								color="primary"
+								disabled={paletteIsFull}
+								onClick={this.addRandomColor}
+							>
+								{
+									paletteIsFull ? 'Palette Is Full!' :
+									'Random Color'}
+							</Button>
+						</div>
+						<ColorPickerForm
+							colors={colors}
+							paletteIsFull={paletteIsFull}
+							createNewColor={this.createNewColor}
+						/>
 					</div>
-					<ColorPickerForm
-						colors={colors}
-						paletteIsFull={paletteIsFull}
-						createNewColor={this.createNewColor}
-					/>
 				</Drawer>
 				<main
 					className={classNames(classes.content, {
