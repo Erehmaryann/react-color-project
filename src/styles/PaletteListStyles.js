@@ -1,12 +1,20 @@
 import sizes from './sizes';
+import bg from './bg.svg';
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
 	root      : {
-		backgroundColor : 'blue',
 		height          : '120vh',
 		display         : 'flex',
 		alignItems      : 'flex-start',
-		justifyContent  : 'center'
+		justifyContent  : 'center',
+		// eslint-disable-next-line no-dupe-keys
+		/* background by SVGBackgrounds.com*/
+		backgroundColor : '#2114aa',
+		backgroundImage : `url(${bg})`,
+		overflow        : 'scroll'
+	},
+	heading   : {
+		fontSize : '2rem'
 	},
 	container : {
 		width              : '50%',
@@ -15,10 +23,10 @@ export default {
 		flexDirection      : 'column',
 		flexWrap           : 'wrap',
 		[sizes.down('md')]: {
-			width : '80%'
+			width : '85%'
 		},
 		[sizes.down('xs')]: {
-			width : '70%'
+			width : '75%'
 		}
 	},
 	nav       : {
