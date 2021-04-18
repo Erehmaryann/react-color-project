@@ -4,7 +4,12 @@ import sizes from './sizes.js';
 const drawerWidth = DRAWER_WIDTH;
 const styles = (theme) => ({
 	root        : {
-		display : 'flex'
+		display : 'flex',
+		'& h6'  : {
+			[sizes.down('xs')]: {
+				fontSize : '0.8rem'
+			}
+		}
 	},
 	appBar      : {
 		transition     : theme.transitions.create([ 'margin', 'width' ], {
@@ -25,7 +30,10 @@ const styles = (theme) => ({
 		})
 	},
 	menuButton  : {
-		marginRight : theme.spacing(2)
+		marginRight        : theme.spacing(2),
+		[sizes.down('xs')]: {
+			marginRight : '0px'
+		}
 	},
 	hide        : {
 		display : 'none'
