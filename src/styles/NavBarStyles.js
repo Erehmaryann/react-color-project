@@ -1,3 +1,4 @@
+import sizes from './sizes';
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
 	Navbar          : {
@@ -8,17 +9,20 @@ export default {
 	},
 
 	logo            : {
-		marginRight     : '15px',
-		padding         : '0 13px',
-		fontSize        : '22px',
-		backgroundColor : '#eceff1',
-		fontFamily      : "'Roboto', sans-serif",
-		height          : '100%',
-		display         : 'flex',
-		alignItems      : 'center',
-		'& a'           : {
+		marginRight        : '15px',
+		padding            : '0 13px',
+		fontSize           : '22px',
+		backgroundColor    : '#eceff1',
+		fontFamily         : "'Roboto', sans-serif",
+		height             : '100%',
+		display            : 'flex',
+		alignItems         : 'center',
+		'& a'              : {
 			textDecoration : 'none',
 			color          : 'black'
+		},
+		[sizes.down('xs')]: {
+			display : 'none'
 		}
 	},
 	slider          : {
@@ -41,6 +45,9 @@ export default {
 			height          : '13px',
 			marginLeft      : '-7px',
 			marginTop       : '-3px'
+		},
+		[sizes.down('md')]: {
+			width : '150px'
 		}
 	},
 	selectContainer : {

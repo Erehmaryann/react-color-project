@@ -1,4 +1,5 @@
 import { DRAWER_WIDTH } from '../contacts';
+import sizes from './sizes.js';
 
 const drawerWidth = DRAWER_WIDTH;
 const styles = (theme) => ({
@@ -30,13 +31,21 @@ const styles = (theme) => ({
 		display : 'none'
 	},
 	navBtns     : {
-		marginRight : '1rem',
-		'& a'       : {
+		marginRight        : '1rem',
+		'& a'              : {
 			textDecoration : 'none'
+		},
+		[sizes.down('xs')]: {
+			marginRight : '0.5rem'
 		}
 	},
 	button      : {
-		margin : '0 0.5rem'
+		margin             : '0 0.5rem',
+		[sizes.down('xs')]: {
+			margin   : '0 0.2rem',
+			padding  : '0.2rem',
+			fontSize : '0.6rem'
+		}
 	}
 });
 

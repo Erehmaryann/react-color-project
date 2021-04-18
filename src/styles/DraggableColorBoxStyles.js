@@ -1,14 +1,29 @@
+import sizes from './sizes';
 const styles = {
 	root       : {
-		width         : '20%',
-		height        : '25%',
-		margin        : '0 auto -5.8px',
-		display       : 'inline-block',
-		position      : 'relative',
-		cursor        : 'pointer',
-		'&:hover svg' : {
+		width              : '20%',
+		height             : '25%',
+		margin             : '0 auto -5.8px',
+		display            : 'inline-block',
+		position           : 'relative',
+		cursor             : 'pointer',
+		'&:hover svg'      : {
 			color     : 'white',
 			transform : 'scale(1.5)'
+		},
+		[sizes.down('lg')]: {
+			width  : '25%',
+			height : '20%'
+		},
+		[sizes.down('md')]: {
+			width  : '50%',
+			height : '10%',
+			margin : '0 auto -6.0px'
+		},
+		[sizes.down('sm')]: {
+			width  : '100%',
+			height : '8%',
+			margin : '0 auto -6.0px'
 		}
 	},
 	boxContent : {

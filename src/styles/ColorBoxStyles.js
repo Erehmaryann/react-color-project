@@ -35,8 +35,9 @@ export default {
 			width  : '100%',
 			height : (props) =>
 
-					props.showingFullPalette ? '5%' :
-					'10%'
+					props.showingFullPalette ? '8%' :
+					'10%',
+			margin : '0 auto -4.1px'
 		}
 	},
 	copyText    : {
