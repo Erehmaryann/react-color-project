@@ -1,20 +1,42 @@
 import chroma from 'chroma-js';
+import sizes from './sizes.js';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
 	colorBox    : {
-		width            : '20%',
-		height           : (props) =>
+		width              : '20%',
+		height             : (props) =>
 
 				props.showingFullPalette ? '25%' :
 				'50%',
-		margin           : '0 auto -3.9px',
-		display          : 'inline-block',
-		position         : 'relative',
-		cursor           : 'pointer',
-		'&:hover button' : {
+		margin             : '0 auto -3.9px',
+		display            : 'inline-block',
+		position           : 'relative',
+		cursor             : 'pointer',
+		'&:hover button'   : {
 			opacity    : '1',
 			transition : '0.5s'
+		},
+		[sizes.down('lg')]: {
+			width  : '25%',
+			height : (props) =>
+
+					props.showingFullPalette ? '20%' :
+					'50%'
+		},
+		[sizes.down('md')]: {
+			width  : '50%',
+			height : (props) =>
+
+					props.showingFullPalette ? '10%' :
+					'50%'
+		},
+		[sizes.down('xs')]: {
+			width  : '100%',
+			height : (props) =>
+
+					props.showingFullPalette ? '5%' :
+					'10%'
 		}
 	},
 	copyText    : {
