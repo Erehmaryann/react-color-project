@@ -1,3 +1,4 @@
+/* eslint-disable no-loop-func */
 import React, { Component } from "react";
 import classNames from "classnames";
 import { withStyles } from "@material-ui/core/styles";
@@ -82,8 +83,16 @@ export class NewPaletteForm extends Component {
   addRandomColor() {
     // pick random colors from existing palettes
     const allColors = this.props.palettes.map((p) => p.colors).flat();
-    let rand = Math.floor(Math.random() * allColors.length);
-    const randColor = allColors[rand];
+    let rand;
+    let randColor;
+    let isDuplicateColor = true;
+    while (isDuplicateColor) {
+      rand = Math.floor(Math.random() * allColors.length);
+      randColor = allColors[rand];
+      isDuplicateColor = this.state.colors.some(
+        (color) => color.name === randColor.name
+      );
+    }
     this.setState({ colors: [...this.state.colors, randColor] });
   }
 
