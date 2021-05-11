@@ -3,6 +3,6 @@
 here is the link to it, hosted on netlify pages
 https://jovial-borg-cdd921.netlify.app/
 
-## still working on the responsiveness,
+## It is fully responsive,
 
 thank you.
